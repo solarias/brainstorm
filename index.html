@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+        <meta charset="utf-8">
+		
+		<title>브레인 스토밍 단어생성기</title>
+		
+		<style type="text/css">
+			* {
+				padding:0px;
+				margin:0px;
+				border:0px;
+				
+				font-family:Arial;
+				font-size:20px;
+				text-decoration:none;
+			}
+			
+			body {
+				padding:10px;
+				
+				background:#FFFFCC;
+			}
+			
+			#create {
+				margin-bottom:10px;
+				width:209px;
+				height:40px;
+				
+				background: #FFFFFF; /* default */
+				background: -moz-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0.00, #FFFFFF), color-stop(1.00, #A0A0A0));
+				background: -ms-linear-gradient(top center, #FFFFFF, #A0A0A0);
+				background: linear-gradient(to bottom, #ffffff, #A0A0A0);
+				-ms-filter: "progid:DXImageTransform.Microsoft.gradient (GradientType=0, startColorstr=#ffffff, endColorstr=#A0A0A0)";
+				
+				border:1px gray outset;
+				border-radius:10px;
+				
+				font-weight:bold;
+			}
+				#create:hover {
+					border:1px white solid;
+				}
+				#create:active {
+					background: #DEDEDE;
+				}
+			
+			.wordbox {
+				margin-bottom:5px;
+				padding:3px;
+				width:200px;
+				height:22px;
+				
+				background:#d0d0d0;
+				border:1px black solid;
+			}
+		</style>
+	</head>
+	<body>
+		<input id="create" type="button" value="단어 2개 생성" />
+		<div id="wordbox1" class="wordbox"></div>
+		<div id="wordbox2" class="wordbox"></div>
+		
+		<script type="text/javascript" src="./word.js"></script>
+		<script type="text/javascript">
+			document.getElementById("create").onclick = function() {
+				document.getElementById("wordbox1").innerHTML = wordList[Math.floor(Math.random() * wordList.length)];
+				document.getElementById("wordbox2").innerHTML = wordList[Math.floor(Math.random() * wordList.length)];
+			}
+			
+		</script>
+	
+	
+	</body>
+</html>
